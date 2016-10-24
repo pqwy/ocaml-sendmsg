@@ -1,0 +1,18 @@
+description = "sendmsg(3) / recvmsg(3) with socket-passing"
+version = "%%VERSION%%"
+requires = "unix"
+archive(byte) = "sendmsg.cma"
+archive(native) = "sendmsg.cmxa"
+plugin(byte) = "sendmsg.cma"
+plugin(native) = "sendmsg.cmxs"
+
+package "lwt" (
+ version = "%%VERSION%%"
+ description = "sendmsg(3) / recvmsg(3) with socket-passing"
+ requires = "sendmsg lwt.unix"
+ archive(byte) = "sendmsg_lwt.cma"
+ archive(native) = "sendmsg_lwt.cmxa"
+ plugin(byte) = "sendmsg_lwt.cma"
+ plugin(native) = "sendmsg_lwt.cmxs"
+ exists_if = "sendmsg_lwt.cma"
+)

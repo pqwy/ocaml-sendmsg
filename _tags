@@ -1,0 +1,17 @@
+true: color(always), bin_annot
+true: warn(A-4-29-33-40-41-42-43-34-44-48)
+true: package(bytes)
+not <test/**>: safe_string
+
+<src> : include
+<src/*.ml{,i}>: package(unix)
+<src/*.cm{,x}a>: link_stubs(src/libsendmsg_stubs)
+
+<lwt>: include
+<lwt/*.ml{,i}>: package(lwt.unix)
+
+<test> : include
+<test/*>: package(alcotest), use_sendmsg
+<test/*_lwt.*>: package(lwt.unix)
+
+<rondom>: -traverse
