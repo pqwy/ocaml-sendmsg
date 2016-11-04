@@ -1,0 +1,37 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Sendmsg.html">
+<link rel="Up" href="index.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Sendmsg" rel="Chapter" href="Sendmsg.html">
+<link title="Sendmsg_lwt" rel="Chapter" href="Sendmsg_lwt.html"><link title="Sendmsg_lwt" rel="Section" href="#1_Sendmsglwt">
+<title>Sendmsg_lwt</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="Sendmsg.html" title="Sendmsg">Previous</a>
+&nbsp;<a class="up" href="index.html" title="Index">Up</a>
+&nbsp;</div>
+<h1>Module <a href="type_Sendmsg_lwt.html">Sendmsg_lwt</a></h1>
+
+<pre><span class="keyword">module</span> Sendmsg_lwt: <code class="code"><span class="keyword">sig</span></code> <a href="Sendmsg_lwt.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+sendmsg(3) / recvmsg(3) with socket-passing for <code class="code"><span class="constructor">Lwt</span></code>
+<p>
+
+    This module mirrors <a href="Sendmsg.html"><code class="code"><span class="constructor">Sendmsg</span></code></a>. Consult that interface for details.
+<p>
+
+    <em>v0.0.1 — <a href="https://github.com/pqwy/sendmsg ">homepage</a></em><br>
+</div>
+<hr width="100%">
+<br>
+<h1 id="1_Sendmsglwt">Sendmsg_lwt</h1><br>
+
+<pre><span id="VALsend"><span class="keyword">val</span> send</span> : <code class="type">Lwt_unix.file_descr -><br>       ?fd:Lwt_unix.file_descr -> bytes -> int -> int -> int Lwt.t</code></pre>
+<pre><span id="VALrecv"><span class="keyword">val</span> recv</span> : <code class="type">Lwt_unix.file_descr -><br>       bytes -> int -> int -> (int * Lwt_unix.file_descr option) Lwt.t</code></pre>
+<pre><span id="VALsendv"><span class="keyword">val</span> sendv</span> : <code class="type">Lwt_unix.file_descr -> ?fd:Lwt_unix.file_descr -> bytes array -> int Lwt.t</code></pre>
+<pre><span id="VALrecvv"><span class="keyword">val</span> recvv</span> : <code class="type">Lwt_unix.file_descr -><br>       bytes array -> (int * Lwt_unix.file_descr option) Lwt.t</code></pre></body></html>

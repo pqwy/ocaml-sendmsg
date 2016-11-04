@@ -1,0 +1,24 @@
+<html><head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Sendmsg" rel="Chapter" href="Sendmsg.html">
+<link title="Sendmsg_lwt" rel="Chapter" href="Sendmsg_lwt.html"><title>Sendmsg_lwt</title>
+</head>
+<body>
+<code class="code"><span class="keyword">sig</span>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;send&nbsp;:
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Lwt_unix</span>.file_descr&nbsp;<span class="keywordsign">-&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;?fd:<span class="constructor">Lwt_unix</span>.file_descr&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;bytes&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;<span class="constructor">Lwt</span>.t
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;recv&nbsp;:
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Lwt_unix</span>.file_descr&nbsp;<span class="keywordsign">-&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;bytes&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;(int&nbsp;*&nbsp;<span class="constructor">Lwt_unix</span>.file_descr&nbsp;option)&nbsp;<span class="constructor">Lwt</span>.t
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;sendv&nbsp;:
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Lwt_unix</span>.file_descr&nbsp;<span class="keywordsign">-&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;?fd:<span class="constructor">Lwt_unix</span>.file_descr&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;bytes&nbsp;array&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;<span class="constructor">Lwt</span>.t
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;recvv&nbsp;:
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Lwt_unix</span>.file_descr&nbsp;<span class="keywordsign">-&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;bytes&nbsp;array&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;(int&nbsp;*&nbsp;<span class="constructor">Lwt_unix</span>.file_descr&nbsp;option)&nbsp;<span class="constructor">Lwt</span>.t
+<span class="keyword">end</span></code></body></html>
