@@ -1,4 +1,4 @@
-## π-calculus? In _my_ kernel?
+## sendmsg — π-calculus? In _my_ kernel?
 
 Higher-order sockets, oh my!
 
