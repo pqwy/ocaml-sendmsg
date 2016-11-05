@@ -8,8 +8,6 @@ let fd : file_descr testable =
 
 let ret = pair int (option fd)
 
-let rec (--) a b = if a = b then [] else a :: succ a -- b
-
 let bracket ~init ~fini f =
   let x = init () in
   match f x with

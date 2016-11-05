@@ -8,13 +8,17 @@
 (** {1 Sendmsg}
 
     For detailed semantics of these functions, consult the
-    {{: https://linux.die.net/man/3/sendmsg}{b sendmsg (3)}} and
-    {{: https://linux.die.net/man/3/recvmsg}{b recvmsg (3)}}
-    man pages. *)
+    {{: https://linux.die.net/man/3/sendmsg}{b sendmsg(3)}} and
+    {{: https://linux.die.net/man/3/recvmsg}{b recvmsg(3)}}
+    man pages.
+
+    In particular, the presence of ancillary data implies preservation of
+    message boundaries: ancillary message will never be read together with bytes
+    of an underlying message it was {e not} sent with. *)
 
 val send : Unix.file_descr -> ?fd:Unix.file_descr -> bytes -> int -> int -> int
 (** [send sock ?fd buf off n] sends up to [n] bytes of [buf], starting from
-    [off], over [sock]. [fs] is attached as ancillary data. Returns the number
+    [off], over [sock]. [fd] is attached as ancillary data. Returns the number
     of bytes sent.
 
     @raise Unix_error on {b ERRNO}. *)

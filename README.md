@@ -14,3 +14,5 @@ sendmsg is distributed under the ISC license.
 Interfaces are documented. [Online][doc] too.
 
 [doc]: https://pqwy.github.io/sendmsg/doc
+
+[![Build Status](https://travis-ci.org/pqwy/sendmsg.svg?branch=master)](https://travis-ci.org/pqwy/sendmsg)

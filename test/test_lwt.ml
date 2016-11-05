@@ -1,13 +1,18 @@
 open Alcotest
 open Lwt.Infix
 
+let uncurry f (a, b) = f a b
+
 let closepair f1 f2 = Lwt_unix.(close f1 >>= fun _ -> close f2)
 
-let with_socketpair a =
-  let (s1, s2) = Lwt_unix.(socketpair PF_UNIX SOCK_STREAM 0) in
-  let close () = closepair s1 s2 in
-  Lwt.catch (fun () -> a s1 s2 >>= fun res -> close () >|= fun _ -> res)
-    (fun exn -> close () >>= fun _ -> Lwt.fail exn)
+let bracket ~init ~fini f =
+  init () >>= fun x ->
+    Lwt.catch (fun () -> f x >>= fun res -> fini x >|= fun _ -> res)
+              (fun exn -> fini x >>= fun _ -> Lwt.fail exn)
+
+let with_socketpair f =
+  let init () = Lwt_unix.(socketpair PF_UNIX SOCK_STREAM 0) |> Lwt.return in
+  bracket ~init ~fini:(uncurry closepair) (uncurry f)
 
 let lim = 1024
 
